@@ -1,0 +1,33 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="960" height="320" viewBox="0 0 960 320">
+  <style>
+    .title { font: bold 24px 'Segoe UI', sans-serif; fill: #0f172a; }
+    .box { stroke-width: 2; rx: 18; }
+    .box-title { font: bold 18px 'Segoe UI', sans-serif; fill: #0f172a; }
+    .item { font: 15px 'Segoe UI', sans-serif; fill: #1e293b; }
+  </style>
+  <text x="60" y="46" class="title">Feature Map</text>
+  <g transform="translate(40,80)">
+    <rect class="box" x="0" y="0" width="400" height="100" fill="#eff6ff" stroke="#3b82f6" />
+    <text x="20" y="28" class="box-title">Temporal Rhythm</text>
+    <text x="20" y="54" class="item">arrival_hour - arrival_minute - hour_sin/hour_cos - day_of_week - month - is_weekend</text>
+    <text x="20" y="78" class="item">minutes_since_open - arrivals_per_5min</text>
+  </g>
+  <g transform="translate(40,200)">
+    <rect class="box" x="0" y="0" width="400" height="100" fill="#ecfccb" stroke="#65a30d" />
+    <text x="20" y="28" class="box-title">Queue State</text>
+    <text x="20" y="54" class="item">queue_length_numeric - lag_queue_1 - rolling_queue_mean_5</text>
+    <text x="20" y="78" class="item">traffic_intensity - cumulative_in_system</text>
+  </g>
+  <g transform="translate(500,80)">
+    <rect class="box" x="0" y="0" width="400" height="100" fill="#fef9c3" stroke="#d97706" />
+    <text x="20" y="28" class="box-title">Customer Flow</text>
+    <text x="20" y="54" class="item">arrival_gap_seconds - cumulative_customers - rolling_arrival_gap_mean_5</text>
+    <text x="20" y="78" class="item">lag_wait_1 - lag_wait_3</text>
+  </g>
+  <g transform="translate(500,200)">
+    <rect class="box" x="0" y="0" width="400" height="100" fill="#fee2e2" stroke="#dc2626" />
+    <text x="20" y="28" class="box-title">Service Efficiency</text>
+    <text x="20" y="54" class="item">computed_service - rolling_service_mean_5 - lag_service_1</text>
+    <text x="20" y="78" class="item">service_load_ratio - ema_wait_10 - ema_queue_10</text>
+  </g>
+</svg>

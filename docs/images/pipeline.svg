@@ -1,0 +1,50 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="960" height="280" viewBox="0 0 960 280">
+  <style>
+    .title { font: bold 24px 'Segoe UI', sans-serif; fill: #0f172a; }
+    .subtitle { font: 15px 'Segoe UI', sans-serif; fill: #0f172a; }
+    .box { fill: #e0f2fe; stroke: #0284c7; stroke-width: 2; rx: 12; }
+    .box text { font: 15px 'Segoe UI', sans-serif; fill: #0f172a; }
+    .arrow { stroke: #0f172a; stroke-width: 2; marker-end: url(#arrowhead); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0f172a" />
+    </marker>
+  </defs>
+  <text x="60" y="42" class="title">POSB Queue Forecasting Workflow</text>
+  <text x="60" y="70" class="subtitle">Raw teller logs are transformed into engineered time-series signals before feeding the Gradient Boosting regressor.</text>
+
+  <g transform="translate(40, 120)">
+    <rect class="box" x="0" y="0" width="180" height="120" fill="#fee2e2" stroke="#dc2626" />
+    <text x="90" y="40" text-anchor="middle" font-weight="600">Raw Queue Logs</text>
+    <text x="90" y="70" text-anchor="middle">arrival_time</text>
+    <text x="90" y="92" text-anchor="middle">start/finish, wait_time, queue_length</text>
+  </g>
+
+  <g transform="translate(250, 120)">
+    <rect class="box" x="0" y="0" width="200" height="120" fill="#dcfce7" stroke="#16a34a" />
+    <text x="100" y="36" text-anchor="middle" font-weight="600">Data Preparation</text>
+    <text x="100" y="66" text-anchor="middle">Parsing timestamps</text>
+    <text x="100" y="88" text-anchor="middle">Imputing gaps & clipping outliers</text>
+  </g>
+
+  <g transform="translate(480, 120)">
+    <rect class="box" x="0" y="0" width="210" height="120" fill="#fef3c7" stroke="#d97706" />
+    <text x="105" y="36" text-anchor="middle" font-weight="600">Feature Engineering</text>
+    <text x="105" y="66" text-anchor="middle">Calendar + cyclic encodings</text>
+    <text x="105" y="88" text-anchor="middle">Lag/Rolling queue signals</text>
+    <text x="105" y="110" text-anchor="middle">Traffic & service ratios</text>
+  </g>
+
+  <g transform="translate(710, 120)">
+    <rect class="box" x="0" y="0" width="210" height="120" fill="#e0e7ff" stroke="#4338ca" />
+    <text x="105" y="36" text-anchor="middle" font-weight="600">Gradient Boosting</text>
+    <text x="105" y="66" text-anchor="middle">Time-series split CV</text>
+    <text x="105" y="88" text-anchor="middle">MAE / RMSE / R²</text>
+    <text x="105" y="110" text-anchor="middle">Staffing alerts</text>
+  </g>
+
+  <line class="arrow" x1="220" y1="180" x2="250" y2="180" />
+  <line class="arrow" x1="450" y1="180" x2="480" y2="180" />
+  <line class="arrow" x1="690" y1="180" x2="710" y2="180" />
+</svg>
