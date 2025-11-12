@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420">
+  <style>
+    .title { font: bold 26px 'Segoe UI', sans-serif; fill: #0f172a; }
+    .subtitle { font: 15px 'Segoe UI', sans-serif; fill: #475569; }
+    .layer-title { font: bold 16px 'Segoe UI', sans-serif; fill: #0f172a; }
+    .item { font: 14px 'Segoe UI', sans-serif; fill: #1e293b; }
+    .label { font: 14px 'Segoe UI', sans-serif; fill: #0f172a; font-weight: 600; }
+    .box { stroke-width: 2; rx: 14; }
+    .arrow { stroke: #0f172a; stroke-width: 2.3; marker-end: url(#arrowhead); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0f172a" />
+    </marker>
+  </defs>
+  <text x="40" y="46" class="title">Gradient Boosting Queue Forecaster Architecture</text>
+  <text x="40" y="70" class="subtitle">Data cleaning feeds a feature factory, which powers a tuned Gradient Boosting pipeline for wait-time predictions.</text>
+
+  <!-- Data layer -->
+  <g transform="translate(40, 110)">
+    <rect class="box" x="0" y="0" width="260" height="150" fill="#fee2e2" stroke="#dc2626" />
+    <text x="130" y="30" text-anchor="middle" class="layer-title">Data Intake</text>
+    <text x="20" y="60" class="item">- POSB teller logs</text>
+    <text x="20" y="84" class="item">- arrival/start/finish timestamps</text>
+    <text x="20" y="108" class="item">- wait_time &amp; queue_length</text>
+    <text x="20" y="132" class="item">- branch metadata placeholders</text>
+  </g>
+
+  <!-- Preparation layer -->
+  <g transform="translate(350, 110)">
+    <rect class="box" x="0" y="0" width="260" height="150" fill="#dcfce7" stroke="#16a34a" />
+    <text x="130" y="30" text-anchor="middle" class="layer-title">Preprocessing</text>
+    <text x="20" y="60" class="item">- Multi-format timestamp parser</text>
+    <text x="20" y="84" class="item">- Duplicate removal &amp; gap imputation</text>
+    <text x="20" y="108" class="item">- Outlier clipping (1st-99th pct)</text>
+    <text x="20" y="132" class="item">- Consistent units (minutes)</text>
+  </g>
+
+  <!-- Feature layer -->
+  <g transform="translate(660, 110)">
+    <rect class="box" x="0" y="0" width="260" height="150" fill="#e0f2fe" stroke="#0284c7" />
+    <text x="130" y="30" text-anchor="middle" class="layer-title">Feature Factory</text>
+    <text x="20" y="60" class="item">- Calendar and cyclic encodings</text>
+    <text x="20" y="84" class="item">- Lag plus rolling wait/queue stats</text>
+    <text x="20" y="108" class="item">- Traffic intensity &amp; service ratios</text>
+    <text x="20" y="132" class="item">- EWMAs and arrival density signals</text>
+  </g>
+
+  <!-- Model pipeline -->
+  <g transform="translate(150, 300)">
+    <rect class="box" x="0" y="0" width="300" height="90" fill="#ede9fe" stroke="#7c3aed" />
+    <text x="150" y="28" text-anchor="middle" class="layer-title">Sklearn Pipeline</text>
+    <text x="20" y="54" class="item">ColumnTransformer -&gt; numeric scaler + categorical OHE</text>
+    <text x="20" y="76" class="item">GradientBoostingRegressor (grid-searched)</text>
+  </g>
+
+  <g transform="translate(520, 300)">
+    <rect class="box" x="0" y="0" width="360" height="90" fill="#fef9c3" stroke="#d97706" />
+    <text x="180" y="28" text-anchor="middle" class="layer-title">Outputs &amp; Monitoring</text>
+    <text x="20" y="54" class="item">- Wait-time predictions (minutes)</text>
+    <text x="20" y="76" class="item">- MAE / RMSE / MAPE / R^2 diagnostics &amp; drift watch</text>
+  </g>
+
+  <!-- Arrows -->
+  <line class="arrow" x1="300" y1="185" x2="350" y2="185" />
+  <line class="arrow" x1="610" y1="185" x2="660" y2="185" />
+  <line class="arrow" x1="435" y1="300" x2="435" y2="260" />
+  <line class="arrow" x1="660" y1="260" x2="660" y2="300" />
+  <line class="arrow" x1="450" y1="345" x2="520" y2="345" />
+
+  <text x="420" y="250" class="label">Feature matrix</text>
+  <text x="640" y="250" class="label">Fitted estimator</text>
+</svg>

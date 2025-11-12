@@ -32,6 +32,13 @@ The notebook builds 25+ predictors that capture both short-term congestion and l
 
 Outliers are clipped to the 1st-99th percentile band, missing queue/service values are median-imputed, and short rolling/lag features are filled with recent medians to avoid leakage.
 
+## Model Architecture at a Glance
+The model is a single scikit-learn pipeline that chains preprocessing, feature engineering, and a tuned Gradient Boosting head:
+
+![Model architecture](docs/images/model_architecture.svg)
+
+Data ingestion and cleaning feed a feature factory that emits the numeric/categorical matrix consumed by the pipeline (ColumnTransformer -> GradientBoostingRegressor). Hold-out metrics and residual tracking close the loop for monitoring.
+
 ## Model Design
 1. **Preprocessing**: `ColumnTransformer` branches into
    - Numeric pipeline -> `SimpleImputer(strategy="median")` + `StandardScaler`.

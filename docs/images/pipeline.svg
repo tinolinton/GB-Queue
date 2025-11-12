@@ -1,4 +1,4 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" width="960" height="280" viewBox="0 0 960 280">
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="280" viewBox="0 0 960 280">
   <style>
     .title { font: bold 24px 'Segoe UI', sans-serif; fill: #0f172a; }
     .subtitle { font: 15px 'Segoe UI', sans-serif; fill: #0f172a; }
@@ -25,7 +25,7 @@
     <rect class="box" x="0" y="0" width="200" height="120" fill="#dcfce7" stroke="#16a34a" />
     <text x="100" y="36" text-anchor="middle" font-weight="600">Data Preparation</text>
     <text x="100" y="66" text-anchor="middle">Parsing timestamps</text>
-    <text x="100" y="88" text-anchor="middle">Imputing gaps & clipping outliers</text>
+    <text x="100" y="88" text-anchor="middle">Imputing gaps &amp; clipping outliers</text>
   </g>
 
   <g transform="translate(480, 120)">
@@ -33,14 +33,14 @@
     <text x="105" y="36" text-anchor="middle" font-weight="600">Feature Engineering</text>
     <text x="105" y="66" text-anchor="middle">Calendar + cyclic encodings</text>
     <text x="105" y="88" text-anchor="middle">Lag/Rolling queue signals</text>
-    <text x="105" y="110" text-anchor="middle">Traffic & service ratios</text>
+    <text x="105" y="110" text-anchor="middle">Traffic &amp; service ratios</text>
   </g>
 
   <g transform="translate(710, 120)">
     <rect class="box" x="0" y="0" width="210" height="120" fill="#e0e7ff" stroke="#4338ca" />
     <text x="105" y="36" text-anchor="middle" font-weight="600">Gradient Boosting</text>
     <text x="105" y="66" text-anchor="middle">Time-series split CV</text>
-    <text x="105" y="88" text-anchor="middle">MAE / RMSE / R²</text>
+    <text x="105" y="88" text-anchor="middle">MAE / RMSE / R^2</text>
     <text x="105" y="110" text-anchor="middle">Staffing alerts</text>
   </g>
 
